@@ -1,0 +1,1242 @@
+/* 
+* Amazium V1.3
+* Copyright 2012, Mike Ballan
+* www.amazium.co.uk
+*/
+
+
+/***** Reset & Basics *****/
+
+html, body, div, span, applet,
+object, iframe, h1, h2, h3, h4,
+h5, h6, p, blockquote, pre, a,
+abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd,
+q, s, samp, small, strike, strong,
+sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details,
+embed, figure, figcaption, footer,
+header, hgroup, menu, nav, output,
+ruby, section, summary, time, mark,
+audio, video 							{ margin: 0; padding: 0; border: 0; font-size:100%; font:inherit; vertical-align:baseline; }
+
+article, aside, details, figcaption, 
+figure, footer, header, hgroup, menu, 
+nav, section 							{ display:block; }
+
+body 									{ line-height:1; }
+
+ol, ul 									{ list-style:none; }
+
+blockquote, q 							{ quotes:none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after 						{ content:''; content:none; }
+
+table 									{ border-collapse:collapse; border-spacing:0; }
+	
+/***** Basic Styles *****/
+
+html 									{ overflow:hidden;}
+body									{ margin:20px 0 0 0; padding:0; background-color:#fff; font:13px "Century Gothic", "Trebuchet MS", Helvetica, sans-serif; color:#333; -webkit-font-smoothing:antialiased; -webkit-text-size-adjust:none; }
+
+/***** Typography *****/
+
+h1, h2, h3, h4, h5, h6 					{ margin:0; padding:0; font-family:"Georgia", "Times New Roman", Helvetica, Arial, sans-serif; font-weight:normal; } 
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a 		{ font-weight:inherit; }
+h1 										{ margin:0 0 10px 0; padding:0; font-size:36px; line-height:40px; color:#333; }
+h2										{ margin:0 0 10px 0; padding:0; font-size:30px; line-height:34px; color:#333; }
+h3 										{ margin:0 0 10px 0; padding:0; font-size:24px; line-height:28px; color:#333; }
+h4 										{ margin:0 0 10px 0; padding:0; font-size:18px; line-height:22px; color:#333; }
+h5 										{ margin:0 0 10px 0; padding:0; font-size:14px; line-height:16px; color:#333; }
+h6 										{ margin:0 0 10px 0; padding:0; font-size:12px; line-height:16px; color:#333; }
+
+p 										{ margin:0; padding:0 0 10px 0; line-height:20px; }
+
+strong 									{ font-weight:bold; color:#333; }
+em 										{ font-style:italic; color:#666; }
+small 									{ font-size:80%; }
+sup, sub								{ height:0;	line-height:5px; vertical-align:baseline; _vertical-align:bottom; position:relative; font-size:80%; }
+sup 									{ bottom:5px; }
+sub 									{ top:5px; }
+code, pre 								{ padding:0 3px 2px; color:#333; font-size:11px; }
+code									{ padding:0 4px 2px 4px; background-color:#000; border:1px solid #000; color:#f1f1f1; }
+
+/***** Lists *****/
+
+ul, ol 									{ margin-bottom:20px; }
+ul 										{ list-style:none outside; }
+ul li									{ margin:0 0 5px 0; padding:0 0 0 18px; line-height:18px; background:transparent; }
+
+ul ul, ul ol							{ margin:5px 0 5px 0; }
+ol ol, ol ul 							{ margin:5px 0 5px 20px; }
+ul ul li, ul ol li,	ol ol li, ol ul li 	{ margin:0 0 6px 0; }
+
+ul.square, ul.square ul					{ list-style:square outside; }
+ul.circle, ul.circle ul 				{ list-style:circle outside; }
+ul.disc, ul.disc ul 					{ list-style:disc outside; }
+ul.square li,
+ul.circle li,
+ul.disc li								{ margin:0 0 5px 15px; padding:0; line-height:18px; background:none; }
+
+ol 										{ margin:0 0 20px 20px; list-style:decimal; }
+ol li									{ margin:0 0 5px 0; padding:0; line-height:18px; }
+
+/***** Blockquotes *****/
+
+blockquote, blockquote p 				{ font-size:12px; line-height:24px; color:#777; font-style:italic; }
+blockquote 								{ margin:10px 0 15px 0; padding:0 0 0 5px; border-left:1px solid #747474; }
+blockquote cite 						{ display:block; font-size:12px; color:#555; }
+blockquote cite:before 					{ content:"\2014 \0020"; }
+blockquote cite a,
+blockquote cite a:visited,
+blockquote cite a:visited 				{ color:#555; }
+blockquote span							{ width:15px; display:inline-block; }
+
+hr 										{ margin:20px 0 20px 0; border:0; border-top:1px solid #999; height:2px; width:100%; text-align:left; }
+
+/***** Links *****/
+
+a:link 									{ color:#333; text-decoration:none; outline:0; transition-property:color .1s linear 0s; -moz-transition:color .1s linear 0s; -webkit-transition:color .1s linear 0s; -o-transition:color .1s linear 0s; }
+a:visited 								{ color:#333; text-decoration:none; outline:0; }
+a:active 								{ color:#333; text-decoration:none; outline:0; }
+a:hover 			 					{ color:#999; text-decoration:underline; outline:0; }
+a:focus 								{ -moz-outline-style:none; }
+
+
+
+/***** Images iFrames & Videos  *****/
+
+img 									{ border:0; -ms-interpolation-mode:bicubic; }
+.max-img 								{ width:100%; height:auto; }		
+.media 									{ position:relative; margin:0 0 15px 0;	padding-bottom:51%; padding-top:30px; height:0; overflow:hidden; border:1px solid #ccc; }
+.media iframe,
+.media object,  
+.media embed 							{ position:absolute; top:0; left:0; width:100%; height:100%; }
+
+/***** Buttons  *****/
+
+a.btn, .btn 							{ margin:5px 0 5px 0; padding:4px 25px 4px 10px; display:inline-block; color:#fff; border:1px solid #000; background:#000 url(../images/btn-arrow.png) no-repeat right; cursor:pointer; }
+a:hover.btn 							{ text-decoration:none; border:1px solid #000; color:#666; background:#000 url(../images/btn-arrow.png) no-repeat right; }
+
+/***** Forms *****/
+
+#stylized-form							{ margin:10px 0 20px 0; padding:20px; background-color:#f4f4f4; -webkit-border-radius:4px; -moz-border-radius:4px; }
+
+.wrapper-block label 					{ padding:0; display:block; font-weight:bold; text-align:right; width:140px; float:left; }
+.wrapper-block [type="text"]			{ font-size:12px; padding:4px 2px; border:solid 1px #bbbbbb; width:200px; margin:2px 0 15px 10px; }
+.wrapper-block select					{ font-size:12px; padding:2px; border:solid 1px #bbbbbb; margin:2px 0 15px 10px; }
+.wrapper-block [type="radio"]			{ line-height:16px; margin:0 2px 15px 10px; }
+.wrapper-block [type="checkbox"]		{ line-height:16px; margin:0 2px 15px 10px; }
+.wrapper-block textarea					{ padding:4px 2px; border:solid 1px #bbbbbb; width:200px; margin:2px 0 15px 10px; font:12px "Century Gothic", "Trebuchet MS", Helvetica, sans-serif; }
+
+.wrapper-inline label 					{ padding:0; display:block; font-weight:bold; text-align:right; width:140px; float:left; }
+.wrapper-inline [type="text"]			{ font-size:12px; padding:4px 2px; border:solid 1px #bbbbbb; width:200px; margin:2px 0 15px 10px;  float:left; }
+.wrapper-inline select					{ font-size:12px; padding:4px 2px; border:solid 1px #bbbbbb; margin:2px 0 15px 10px; float:left; }
+.wrapper-inline [type="radio"]			{ line-height:16px; margin:0 2px 15px 10px; float:left; }
+.wrapper-inline [type="checkbox"]		{ line-height:16px; margin:0 2px 15px 10px; float:left; }
+.wrapper-inline textarea				{ padding:4px 2px; border:solid 1px #bbbbbb; width:140px; margin:2px 0 15px 10px; font:12px "Century Gothic", "Trebuchet MS", Helvetica, sans-serif; float:left; }
+
+a.btn-form, input.btn-form				{ margin:5px 0 5px 150px; padding:4px 28px 4px 8px; display:inline-block; font-size:11px; color:#fff; border:1px solid #444; background:#333 url(../images/btn-arrow.png) no-repeat right; border-radius:4px; -webkit-border-radius:4px; -moz-border-radius:4px; cursor:pointer; }
+.small-label							{ display:block; font-size:10px; font-weight:normal; color:#666; text-align:right; width:140px; }
+
+/***** Tables  *****/
+
+table									{ margin:0 0 20px 0; width:100%; }
+table th 								{ padding:10px 8px 10px 8px; background-color:#e2e2e2; color:#333; font-weight:bold; border:1px solid #999; }
+table td 								{ padding:10px 8px 10px 8px; background-color:#e2e2e2; color:#333; border:1px solid #999; }
+table tr.even td 						{ background-color:#fff; }
+table tr.odd td 						{ background-color:#f3f3f3; }
+table td.highlight 						{ color:#FFF; font-weight:bold; }
+table tr td.highlight					{ background-color:#333;  }
+	
+/***** Global Classes *****/
+
+.img-left   							{ float:left; margin:0 30px 30px 0; border:none; }
+.img-right  							{ float:right; margin:0 0 30px 30px; border:none; }
+	
+.clear       							{ clear:both; }
+.float-left 							{ float:left; }
+.float-right   							{ float:right; }
+
+.text-big								{ color:#a2bd30; font-weight:bold; line-height:26px; }
+.text-left    							{ text-align:left; }
+.text-right    							{ text-align:right; }
+.text-center   							{ text-align:center; }
+.text-justify  							{ text-align:justify; }
+
+.normal									{ font-weight:normal; }
+.bold          							{ font-weight:bold; }
+.italic        							{ font-style:italic; }
+.underline     							{ border-bottom:1px solid; }
+.highlight     							{ padding:0 3px 2px; color:#333; font-size:11px; background:#00deff; font-weight:bold; }
+.intro									{ font-size:130%; line-height:130%; }
+
+.nopadding 						   		{ padding:0; }
+.noindent  						   		{ margin-left:0; padding-left:0; }
+.nobullet  					   			{ list-style:none; list-style-image:none; }
+
+.block									{ display:block; }
+.hidden									{ display:none; }
+.hide 									{ display:none; }
+
+.spacer                                 {margin-top:50px;}
+
+/***** Back to Top *****/
+
+#toTop 									{ display:none; text-decoration:none; position:fixed; bottom:10px; right:10px; overflow:hidden; width:51px; height:51px; border:none; text-indent:-999px; background:url(../images/ui.totop.png) no-repeat left top; }
+#toTopHover 							{ background:url(../images/ui.totop.png) no-repeat left -51px; width:51px; height:51px; display:block; overflow:hidden; float:left; opacity: 0; -moz-opacity: 0; filter:alpha(opacity=0); }
+#toTop:active, #toTop:focus 			{ outline:none; }
+
+/****** Parkett Riemen *****/
+
+.riemen{
+	position:absolute;
+	width:40px;
+	border:1px solid #000;
+	height:278px;
+	background:rgba(255, 255, 255 ,0.6);
+	z-index:5;
+	background-size:cover;
+}
+
+.default-bg{
+	background:rgba(255, 255, 255 ,0.6);
+/*	background:url(../img/blue-intense/blue-intense-i1.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+*/
+}
+.white1{
+	background:url(../img/white/white-i1.jpg);
+	background-repeat:no-repeat;
+}
+.white2{
+	background:url(../img/white/white-i2.jpg);
+	background-repeat:no-repeat;
+}
+.white3{
+	background:url(../img/white/white-i3.jpg);
+	background-repeat:no-repeat;
+}
+.white4{
+	background:url(../img/white/white-i4.jpg);
+	background-repeat:no-repeat;
+}
+.white5{
+	background:url(../img/white/white-i5.jpg);
+	background-repeat:no-repeat;
+}
+.white6{
+	background:url(../img/white/white-i6.jpg);
+	background-repeat:no-repeat;
+}
+.white7{
+	background:url(../img/white/white-i7.jpg);
+	background-repeat:no-repeat;
+}
+.white8{
+	background:url(../img/white/white-i8.jpg);
+	background-repeat:no-repeat;
+}
+.white9{
+	background:url(../img/white/white-i9.jpg);
+	background-repeat:no-repeat;
+}
+.white10{
+	background:url(../img/white/white-i10.jpg);
+	background-repeat:no-repeat;
+}
+.white11{
+	background:url(../img/white/white-i11.jpg);
+	background-repeat:no-repeat;
+}
+.white12{
+	background:url(../img/white/white-i12.jpg);
+	background-repeat:no-repeat;
+}
+.white13{
+	background:url(../img/white/white-i13.jpg);
+	background-repeat:no-repeat;
+}
+.white14{
+	background:url(../img/white/white-i14.jpg);
+	background-repeat:no-repeat;
+}
+.white15{
+	background:url(../img/white/white-i15.jpg);
+	background-repeat:no-repeat;
+}
+.white16{
+	background:url(../img/white/white-i16.jpg);
+	background-repeat:no-repeat;
+}
+.white17{
+	background:url(../img/white/white-i17.jpg);
+	background-repeat:no-repeat;
+}
+.white18{
+	background:url(../img/white/white-i18.jpg);
+	background-repeat:no-repeat;
+}
+.white19{
+	background:url(../img/white/white-i19.jpg);
+	background-repeat:no-repeat;
+}
+.white20{
+	background:url(../img/white/white-i20.jpg);
+	background-repeat:no-repeat;
+}
+.white21{
+	background:url(../img/white/white-i21.jpg);
+	background-repeat:no-repeat;
+}
+.white22{
+	background:url(../img/white/white-i22.jpg);
+	background-repeat:no-repeat;
+}
+.white23{
+	background:url(../img/white/white-i23.jpg);
+	background-repeat:no-repeat;
+}
+
+
+.yellowLight1{
+	background:url(../img/yellow-light/yellow-light-i1.jpg);
+	background-repeat:no-repeat;
+}
+.yellowLight2{
+	background:url(../img/yellow-light/yellow-light-i2.jpg);
+	background-repeat:no-repeat;
+}
+.yellowLight3{
+	background:url(../img/yellow-light/yellow-light-i3.jpg);
+	background-repeat:no-repeat;
+}
+
+
+
+
+.blue-intense1{
+	background:url(../img/blue-intense/blue-intense-i1.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense2{
+	background:url(../img/blue-intense/blue-intense-i2.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense3{
+	background:url(../img/blue-intense/blue-intense-i3.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense4{
+	background:url(../img/blue-intense/blue-intense-i4.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense5{
+	background:url(../img/blue-intense/blue-intense-i5.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense6{
+	background:url(../img/blue-intense/blue-intense-i6.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense7{
+	background:url(../img/blue-intense/blue-intense-i7.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense8{
+	background:url(../img/blue-intense/blue-intense-i8.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense9{
+	background:url(../img/blue-intense/blue-intense-i9.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense10{
+	background:url(../img/blue-intense/blue-intense-i10.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense11{
+	background:url(../img/blue-intense/blue-intense-i11.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense12{
+	background:url(../img/blue-intense/blue-intense-i12.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense13{
+	background:url(../img/blue-intense/blue-intense-i13.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense14{
+	background:url(../img/blue-intense/blue-intense-i14.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense15{
+	background:url(../img/blue-intense/blue-intense-i15.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense16{
+	background:url(../img/blue-intense/blue-intense-i16.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense17{
+	background:url(../img/blue-intense/blue-intense-i17.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense18{
+	background:url(../img/blue-intense/blue-intense-i18.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense19{
+	background:url(../img/blue-intense/blue-intense-i19.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense20{
+	background:url(../img/blue-intense/blue-intense-i20.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense21{
+	background:url(../img/blue-intense/blue-intense-i21.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense22{
+	background:url(../img/blue-intense/blue-intense-i22.jpg);
+	background-repeat:no-repeat;
+}
+.blue-intense23{
+	background:url(../img/blue-intense/blue-intense-i23.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light1{
+	background:url(../img/blue-light/blue-light-i1.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light2{
+	background:url(../img/blue-light/blue-light-i2.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light3{
+	background:url(../img/blue-light/blue-light-i3.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light4{
+	background:url(../img/blue-light/blue-light-i4.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light5{
+	background:url(../img/blue-light/blue-light-i5.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light6{
+	background:url(../img/blue-light/blue-light-i6.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light7{
+	background:url(../img/blue-light/blue-light-i7.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light8{
+	background:url(../img/blue-light/blue-light-i8.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light9{
+	background:url(../img/blue-light/blue-light-i9.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light10{
+	background:url(../img/blue-light/blue-light-i10.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light11{
+	background:url(../img/blue-light/blue-light-i11.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light12{
+	background:url(../img/blue-light/blue-light-i12.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light13{
+	background:url(../img/blue-light/blue-light-i13.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light14{
+	background:url(../img/blue-light/blue-light-i14.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light15{
+	background:url(../img/blue-light/blue-light-i15.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light16{
+	background:url(../img/blue-light/blue-light-i16.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light17{
+	background:url(../img/blue-light/blue-light-i17.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light18{
+	background:url(../img/blue-light/blue-light-i18.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light19{
+	background:url(../img/blue-light/blue-light-i19.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light20{
+	background:url(../img/blue-light/blue-light-i20.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light21{
+	background:url(../img/blue-light/blue-light-i21.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light22{
+	background:url(../img/blue-light/blue-light-i22.jpg);
+	background-repeat:no-repeat;
+}
+.blue-light23{
+	background:url(../img/blue-light/blue-light-i23.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense1{
+	background:url(../img/green-intense/green-intense-i1.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense2{
+	background:url(../img/green-intense/green-intense-i2.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense3{
+	background:url(../img/green-intense/green-intense-i3.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense4{
+	background:url(../img/green-intense/green-intense-i4.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense5{
+	background:url(../img/green-intense/green-intense-i5.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense6{
+	background:url(../img/green-intense/green-intense-i6.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense7{
+	background:url(../img/green-intense/green-intense-i7.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense8{
+	background:url(../img/green-intense/green-intense-i8.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense9{
+	background:url(../img/green-intense/green-intense-i9.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense10{
+	background:url(../img/green-intense/green-intense-i10.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense11{
+	background:url(../img/green-intense/green-intense-i11.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense12{
+	background:url(../img/green-intense/green-intense-i12.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense13{
+	background:url(../img/green-intense/green-intense-i13.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense14{
+	background:url(../img/green-intense/green-intense-i14.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense15{
+	background:url(../img/green-intense/green-intense-i15.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense16{
+	background:url(../img/green-intense/green-intense-i16.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense17{
+	background:url(../img/green-intense/green-intense-i17.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense18{
+	background:url(../img/green-intense/green-intense-i18.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense19{
+	background:url(../img/green-intense/green-intense-i19.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense20{
+	background:url(../img/green-intense/green-intense-i20.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense21{
+	background:url(../img/green-intense/green-intense-i21.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense22{
+	background:url(../img/green-intense/green-intense-i22.jpg);
+	background-repeat:no-repeat;
+}
+.green-intense23{
+	background:url(../img/green-intense/green-intense-i23.jpg);
+	background-repeat:no-repeat;
+}
+.green-light1{
+	background:url(../img/green-light/green-light-i1.jpg);
+	background-repeat:no-repeat;
+}
+.green-light2{
+	background:url(../img/green-light/green-light-i2.jpg);
+	background-repeat:no-repeat;
+}
+.green-light3{
+	background:url(../img/green-light/green-light-i3.jpg);
+	background-repeat:no-repeat;
+}
+.green-light4{
+	background:url(../img/green-light/green-light-i4.jpg);
+	background-repeat:no-repeat;
+}
+.green-light5{
+	background:url(../img/green-light/green-light-i5.jpg);
+	background-repeat:no-repeat;
+}
+.green-light6{
+	background:url(../img/green-light/green-light-i6.jpg);
+	background-repeat:no-repeat;
+}
+.green-light7{
+	background:url(../img/green-light/green-light-i7.jpg);
+	background-repeat:no-repeat;
+}
+.green-light8{
+	background:url(../img/green-light/green-light-i8.jpg);
+	background-repeat:no-repeat;
+}
+.green-light9{
+	background:url(../img/green-light/green-light-i9.jpg);
+	background-repeat:no-repeat;
+}
+.green-light10{
+	background:url(../img/green-light/green-light-i10.jpg);
+	background-repeat:no-repeat;
+}
+.green-light11{
+	background:url(../img/green-light/green-light-i11.jpg);
+	background-repeat:no-repeat;
+}
+.green-light12{
+	background:url(../img/green-light/green-light-i12.jpg);
+	background-repeat:no-repeat;
+}
+.green-light13{
+	background:url(../img/green-light/green-light-i13.jpg);
+	background-repeat:no-repeat;
+}
+.green-light14{
+	background:url(../img/green-light/green-light-i14.jpg);
+	background-repeat:no-repeat;
+}
+.green-light15{
+	background:url(../img/green-light/green-light-i15.jpg);
+	background-repeat:no-repeat;
+}
+.green-light16{
+	background:url(../img/green-light/green-light-i16.jpg);
+	background-repeat:no-repeat;
+}
+.green-light17{
+	background:url(../img/green-light/green-light-i17.jpg);
+	background-repeat:no-repeat;
+}
+.green-light18{
+	background:url(../img/green-light/green-light-i18.jpg);
+	background-repeat:no-repeat;
+}
+.green-light19{
+	background:url(../img/green-light/green-light-i19.jpg);
+	background-repeat:no-repeat;
+}
+.green-light20{
+	background:url(../img/green-light/green-light-i20.jpg);
+	background-repeat:no-repeat;
+}
+.green-light21{
+	background:url(../img/green-light/green-light-i21.jpg);
+	background-repeat:no-repeat;
+}
+.green-light22{
+	background:url(../img/green-light/green-light-i22.jpg);
+	background-repeat:no-repeat;
+}
+.green-light23{
+	background:url(../img/green-light/green-light-i23.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews1{
+	background:url(../img/oldnews/oldnews-i1.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews2{
+	background:url(../img/oldnews/oldnews-i2.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews3{
+	background:url(../img/oldnews/oldnews-i3.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews4{
+	background:url(../img/oldnews/oldnews-i4.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews5{
+	background:url(../img/oldnews/oldnews-i5.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews6{
+	background:url(../img/oldnews/oldnews-i6.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews7{
+	background:url(../img/oldnews/oldnews-i7.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews8{
+	background:url(../img/oldnews/oldnews-i8.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews9{
+	background:url(../img/oldnews/oldnews-i9.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews10{
+	background:url(../img/oldnews/oldnews-i10.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews11{
+	background:url(../img/oldnews/oldnews-i11.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews12{
+	background:url(../img/oldnews/oldnews-i12.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews13{
+	background:url(../img/oldnews/oldnews-i13.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews14{
+	background:url(../img/oldnews/oldnews-i14.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews15{
+	background:url(../img/oldnews/oldnews-i15.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews16{
+	background:url(../img/oldnews/oldnews-i16.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews17{
+	background:url(../img/oldnews/oldnews-i17.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews18{
+	background:url(../img/oldnews/oldnews-i18.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews19{
+	background:url(../img/oldnews/oldnews-i19.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews20{
+	background:url(../img/oldnews/oldnews-i20.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews21{
+	background:url(../img/oldnews/oldnews-i21.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews22{
+	background:url(../img/oldnews/oldnews-i22.jpg);
+	background-repeat:no-repeat;
+}
+.oldnews23{
+	background:url(../img/oldnews/oldnews-i23.jpg);
+	background-repeat:no-repeat;
+}
+.mandala1{
+	background:url(../img/mandala/mandala-i1.jpg);
+	background-repeat:no-repeat;
+}
+.mandala2{
+	background:url(../img/mandala/mandala-i2.jpg);
+	background-repeat:no-repeat;
+}
+.mandala3{
+	background:url(../img/mandala/mandala-i3.jpg);
+	background-repeat:no-repeat;
+}
+.mandala4{
+	background:url(../img/mandala/mandala-i4.jpg);
+	background-repeat:no-repeat;
+}
+.mandala5{
+	background:url(../img/mandala/mandala-i5.jpg);
+	background-repeat:no-repeat;
+}
+.mandala6{
+	background:url(../img/mandala/mandala-i6.jpg);
+	background-repeat:no-repeat;
+}
+.mandala7{
+	background:url(../img/mandala/mandala-i7.jpg);
+	background-repeat:no-repeat;
+}
+.mandala8{
+	background:url(../img/mandala/mandala-i8.jpg);
+	background-repeat:no-repeat;
+}
+.mandala9{
+	background:url(../img/mandala/mandala-i9.jpg);
+	background-repeat:no-repeat;
+}
+.mandala10{
+	background:url(../img/mandala/mandala-i10.jpg);
+	background-repeat:no-repeat;
+}
+.mandala11{
+	background:url(../img/mandala/mandala-i11.jpg);
+	background-repeat:no-repeat;
+}
+.mandala12{
+	background:url(../img/mandala/mandala-i12.jpg);
+	background-repeat:no-repeat;
+}
+.mandala13{
+	background:url(../img/mandala/mandala-i13.jpg);
+	background-repeat:no-repeat;
+}
+.mandala14{
+	background:url(../img/mandala/mandala-i14.jpg);
+	background-repeat:no-repeat;
+}
+.mandala15{
+	background:url(../img/mandala/mandala-i15.jpg);
+	background-repeat:no-repeat;
+}
+.mandala16{
+	background:url(../img/mandala/mandala-i16.jpg);
+	background-repeat:no-repeat;
+}
+.mandala17{
+	background:url(../img/mandala/mandala-i17.jpg);
+	background-repeat:no-repeat;
+}
+.mandala18{
+	background:url(../img/mandala/mandala-i18.jpg);
+	background-repeat:no-repeat;
+}
+.mandala19{
+	background:url(../img/mandala/mandala-i19.jpg);
+	background-repeat:no-repeat;
+}
+.mandala20{
+	background:url(../img/mandala/mandala-i20.jpg);
+	background-repeat:no-repeat;
+}
+.mandala21{
+	background:url(../img/mandala/mandala-i21.jpg);
+	background-repeat:no-repeat;
+}
+.mandala22{
+	background:url(../img/mandala/mandala-i22.jpg);
+	background-repeat:no-repeat;
+}
+.mandala23{
+	background:url(../img/mandala/mandala-i23.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense1{
+	background:url(../img/red-intense/red-intense-i1.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense2{
+	background:url(../img/red-intense/red-intense-i2.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense3{
+	background:url(../img/red-intense/red-intense-i3.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense4{
+	background:url(../img/red-intense/red-intense-i4.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense5{
+	background:url(../img/red-intense/red-intense-i5.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense6{
+	background:url(../img/red-intense/red-intense-i6.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense7{
+	background:url(../img/red-intense/red-intense-i7.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense8{
+	background:url(../img/red-intense/red-intense-i8.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense9{
+	background:url(../img/red-intense/red-intense-i9.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense10{
+	background:url(../img/red-intense/red-intense-i10.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense11{
+	background:url(../img/red-intense/red-intense-i11.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense12{
+	background:url(../img/red-intense/red-intense-i12.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense13{
+	background:url(../img/red-intense/red-intense-i13.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense14{
+	background:url(../img/red-intense/red-intense-i14.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense15{
+	background:url(../img/red-intense/red-intense-i15.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense16{
+	background:url(../img/red-intense/red-intense-i16.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense17{
+	background:url(../img/red-intense/red-intense-i17.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense18{
+	background:url(../img/red-intense/red-intense-i18.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense19{
+	background:url(../img/red-intense/red-intense-i19.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense20{
+	background:url(../img/red-intense/red-intense-i20.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense21{
+	background:url(../img/red-intense/red-intense-i21.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense22{
+	background:url(../img/red-intense/red-intense-i22.jpg);
+	background-repeat:no-repeat;
+}
+.red-intense23{
+	background:url(../img/red-intense/red-intense-i23.jpg);
+	background-repeat:no-repeat;
+}
+.red-light1{
+	background:url(../img/red-light/red-light-i1.jpg);
+	background-repeat:no-repeat;
+}
+.red-light2{
+	background:url(../img/red-light/red-light-i2.jpg);
+	background-repeat:no-repeat;
+}
+.red-light3{
+	background:url(../img/red-light/red-light-i3.jpg);
+	background-repeat:no-repeat;
+}
+.red-light4{
+	background:url(../img/red-light/red-light-i4.jpg);
+	background-repeat:no-repeat;
+}
+.red-light5{
+	background:url(../img/red-light/red-light-i5.jpg);
+	background-repeat:no-repeat;
+}
+.red-light6{
+	background:url(../img/red-light/red-light-i6.jpg);
+	background-repeat:no-repeat;
+}
+.red-light7{
+	background:url(../img/red-light/red-light-i7.jpg);
+	background-repeat:no-repeat;
+}
+.red-light8{
+	background:url(../img/red-light/red-light-i8.jpg);
+	background-repeat:no-repeat;
+}
+.red-light9{
+	background:url(../img/red-light/red-light-i9.jpg);
+	background-repeat:no-repeat;
+}
+.red-light10{
+	background:url(../img/red-light/red-light-i10.jpg);
+	background-repeat:no-repeat;
+}
+.red-light11{
+	background:url(../img/red-light/red-light-i11.jpg);
+	background-repeat:no-repeat;
+}
+.red-light12{
+	background:url(../img/red-light/red-light-i12.jpg);
+	background-repeat:no-repeat;
+}
+.red-light13{
+	background:url(../img/red-light/red-light-i13.jpg);
+	background-repeat:no-repeat;
+}
+.red-light14{
+	background:url(../img/red-light/red-light-i14.jpg);
+	background-repeat:no-repeat;
+}
+.red-light15{
+	background:url(../img/red-light/red-light-i15.jpg);
+	background-repeat:no-repeat;
+}
+.red-light16{
+	background:url(../img/red-light/red-light-i16.jpg);
+	background-repeat:no-repeat;
+}
+.red-light17{
+	background:url(../img/red-light/red-light-i17.jpg);
+	background-repeat:no-repeat;
+}
+.red-light18{
+	background:url(../img/red-light/red-light-i18.jpg);
+	background-repeat:no-repeat;
+}
+.red-light19{
+	background:url(../img/red-light/red-light-i19.jpg);
+	background-repeat:no-repeat;
+}
+.red-light20{
+	background:url(../img/red-light/red-light-i20.jpg);
+	background-repeat:no-repeat;
+}
+.red-light21{
+	background:url(../img/red-light/red-light-i21.jpg);
+	background-repeat:no-repeat;
+}
+.red-light22{
+	background:url(../img/red-light/red-light-i22.jpg);
+	background-repeat:no-repeat;
+}
+.red-light23{
+	background:url(../img/red-light/red-light-i23.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense1{
+	background:url(../img/yellow-intense/yellow-intense-i1.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense2{
+	background:url(../img/yellow-intense/yellow-intense-i2.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense3{
+	background:url(../img/yellow-intense/yellow-intense-i3.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense4{
+	background:url(../img/yellow-intense/yellow-intense-i4.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense5{
+	background:url(../img/yellow-intense/yellow-intense-i5.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense6{
+	background:url(../img/yellow-intense/yellow-intense-i6.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense7{
+	background:url(../img/yellow-intense/yellow-intense-i7.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense8{
+	background:url(../img/yellow-intense/yellow-intense-i8.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense9{
+	background:url(../img/yellow-intense/yellow-intense-i9.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense10{
+	background:url(../img/yellow-intense/yellow-intense-i10.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense11{
+	background:url(../img/yellow-intense/yellow-intense-i11.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense12{
+	background:url(../img/yellow-intense/yellow-intense-i12.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense13{
+	background:url(../img/yellow-intense/yellow-intense-i13.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense14{
+	background:url(../img/yellow-intense/yellow-intense-i14.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense15{
+	background:url(../img/yellow-intense/yellow-intense-i15.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense16{
+	background:url(../img/yellow-intense/yellow-intense-i16.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense17{
+	background:url(../img/yellow-intense/yellow-intense-i17.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense18{
+	background:url(../img/yellow-intense/yellow-intense-i18.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense19{
+	background:url(../img/yellow-intense/yellow-intense-i19.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense20{
+	background:url(../img/yellow-intense/yellow-intense-i20.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense21{
+	background:url(../img/yellow-intense/yellow-intense-i21.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense22{
+	background:url(../img/yellow-intense/yellow-intense-i22.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-intense23{
+	background:url(../img/yellow-intense/yellow-intense-i23.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light1{
+	background:url(../img/yellow-light/yellow-light-i1.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light2{
+	background:url(../img/yellow-light/yellow-light-i2.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light3{
+	background:url(../img/yellow-light/yellow-light-i3.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light4{
+	background:url(../img/yellow-light/yellow-light-i4.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light5{
+	background:url(../img/yellow-light/yellow-light-i5.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light6{
+	background:url(../img/yellow-light/yellow-light-i6.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light7{
+	background:url(../img/yellow-light/yellow-light-i7.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light8{
+	background:url(../img/yellow-light/yellow-light-i8.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light9{
+	background:url(../img/yellow-light/yellow-light-i9.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light10{
+	background:url(../img/yellow-light/yellow-light-i10.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light11{
+	background:url(../img/yellow-light/yellow-light-i11.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light12{
+	background:url(../img/yellow-light/yellow-light-i12.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light13{
+	background:url(../img/yellow-light/yellow-light-i13.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light14{
+	background:url(../img/yellow-light/yellow-light-i14.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light15{
+	background:url(../img/yellow-light/yellow-light-i15.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light16{
+	background:url(../img/yellow-light/yellow-light-i16.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light17{
+	background:url(../img/yellow-light/yellow-light-i17.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light18{
+	background:url(../img/yellow-light/yellow-light-i18.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light19{
+	background:url(../img/yellow-light/yellow-light-i19.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light20{
+	background:url(../img/yellow-light/yellow-light-i20.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light21{
+	background:url(../img/yellow-light/yellow-light-i21.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light22{
+	background:url(../img/yellow-light/yellow-light-i22.jpg);
+	background-repeat:no-repeat;
+}
+.yellow-light23{
+	background:url(../img/yellow-light/yellow-light-i23.jpg);
+	background-repeat:no-repeat;
+}
