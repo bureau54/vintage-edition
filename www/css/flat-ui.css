@@ -553,7 +553,8 @@ h6 {
 .btn.btn-info {
   color:#000;;
   background:rgba(255,255,255,0.8);
-  border-color:#000;; 
+  border-color:#000;
+  z-index:50000; !important
 }
 .btn.btn-info:hover,
 .btn.btn-info:focus,
