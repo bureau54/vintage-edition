@@ -32,6 +32,10 @@
         <link rel="stylesheet" type="text/css" href="css/layout.css" />
         <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+                
+        <script src="js/jquery.kinetic.min.js" type="text/javascript" charset="utf-8"></script>
+
+        
 		<script type="text/javascript" src="js/modernizr.custom.86080.js"></script>
 
 
@@ -44,7 +48,7 @@
        <div class="topbar">
           <a href="index.html "rel="external"><p class="btn float-left fui-arrow-left" style="color:#fff;"></p></a>
             <img src="img/logo-topbar.png" width="120" alt="Bauwerk Parkett AG"/>
-            <p class="btn float-right fui-photo" style="color:#fff;"></p>
+            <p class="btn float-right fui-photo" style="color:#fff; display:none;"></p>
           
        </div>
       
@@ -76,9 +80,9 @@
        <script type="text/javascript">
             app.initialize();
 			
-			
+            $('#scrollable').kinetic();
+
 			/* Draw Parkett Overlay */
-			
 			var mode = window.location.hash;
 						
 			switch (mode) {
@@ -90,7 +94,7 @@
 		    }
 			
 	       
-		   $(".btn-parkett").click(function(event){
+		   $(".btn-parkett div").click(function(event){
 			
 			  $(".btn-parkett div").removeClass("btn-parkett-active");
 			  $(event.target).addClass("btn-parkett-active");   

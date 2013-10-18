@@ -24,12 +24,16 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Vintage Edition</title>
+
         
         <link rel="stylesheet" type="text/css" href="css/base.css" />
         <link rel="stylesheet" type="text/css" href="css/amazium.css" />
-        <link rel="stylesheet" type="text/css" href="css/flat-ui.css" />
         <link rel="stylesheet" type="text/css" href="css/style3.css" />
+        <link rel="stylesheet" type="text/css" href="css/flat-ui.css" />
         <link rel="stylesheet" type="text/css" href="css/layout.css" />
+
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
 		<script type="text/javascript" src="js/modernizr.custom.86080.js"></script>
 
     </head>
@@ -60,28 +64,34 @@
        </div>
        
        <div class="row">
-         <div class="grid_12" style="z-index:100;">
+         <div class="grid_12">
            <div class="spacer"></div>
-           <div class="btn btn-large btn-info max-img"><a href="parquetdesigner.html#parallel"><p>Parallel</p></a></div>
-           <div class="btn btn-large btn-info max-img"><a href="parquetdesigner.html#offset"><p>Parallel versetzt</p></a></div>
-           <div class="btn btn-large btn-info max-img"><a href="parquetdesigner.html#shipdeck"><p>Schiffsboden</p></a></div>
-           <div class="btn btn-large btn-info max-img"><a href="parquetdesigner.html#english"><p>Englisch</p></a></div>
-           <div id="manual" class="btn btn-primary max-img"><p>Bedienungsanleitung</p></div>
+           <p class="btn btn-info btn-large max-img"><a href="parquetdesigner.html#parallel" rel="external">Parallel</a></p>
+           <p class="btn btn-info btn-large max-img"><a href="parquetdesigner.html#offset" rel="external">Parallel versetzt</a></p>
+           <p class="btn btn-info btn-large max-img"><a href="parquetdesigner.html#shipdeck" rel="external">Schiffsboden</a></p>
+           <p class="btn btn-info btn-large max-img"><a href="parquetdesigner.html#english" rel="external">Englisch</a></p>
+           
+           <span class="tooltip" style="width: 150px; height: 100px; "><p>1. Verlegeart wählen</p><p>2. Bodengrundfarbe auswählen</p><p>3. ON/OFF Schalter betätigen und einzelne Riemen einfärben.</p></span>
+           <div id="manual" class="btn btn-inverse btn-large max-img"><p>Bedienungsanleitung</p></div>
            <div id="logo-big-front" class="text-center"><img src="img/logo_big.png" alt="Logo Bauwerk Parkett"/></div>
          </div>
        </div>
 
-      
-
        
         <div class="footer">
-          <div class="row"><div class="grid_12"><p class="footer-text">Die Vintage Edition eröffnet mit 2047 Kombinationsmöglichkeiten und vier Verlegearten unzählige Gestaltungsmöglichkeiten – kein Boden ist wie der andere. Kreiere deinen eigenen Boden.</p></div></div>
+          <p class="footer-text">Die Vintage Edition eröffnet mit 2047 Kombinationsmöglichkeiten und vier Verlegearten unzählige Gestaltungsmöglichkeiten – kein Boden ist wie der andere. Kreiere deinen eigenen Boden.</p>
         </div>
         
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+			
+			$("#manual").click(function(event){
+			
+			  $(".tooltip").fadeToggle();	
+		   
+		   });
         </script>
     </body>
 </html>

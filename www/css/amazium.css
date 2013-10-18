@@ -10,12 +10,6 @@
 .row 								{ margin:0 auto; width:100%; overflow:hidden; }
 .row .row 							{ margin:0 -16px 0 -16px; width:auto; display:inline-block; }
 #controls                           { width:1200px; overflow:hidden;}
-div.scrollableArea
-{
-	position: relative;
-	width: auto;
-	height: 100%;
-}
 
 .grid_1								{ width:48px; margin:0 16px 0 16px; overflow:hidden; float:left; display:inline; }
 .grid_2 							{ width:128px; margin:0 16px 0 16px; overflow:hidden; float:left; display:inline; }
