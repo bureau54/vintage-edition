@@ -55,7 +55,7 @@
        <div class="footer">
          <div id="scrollable" class="row">
              <div id="controls">
-               <div class="btn-select-all"><input id="All-In-One-Mode" type="checkbox" checked><div class="btn-label">On</div></div>
+               <div class="btn-select-all"><input id="All-In-One-Mode" type="checkbox" checked><div id="chkON" class="btn-label">On</div></div>
                <div class="btn-parkett"><div data-type="1" class="btn-white"></div><div class="btn-label">White</div></div>
                <div class="btn-parkett"><div data-type="2" class="btn-yellowLight"></div><div class="btn-label">Yellow<br/>Light</div></div>
                <div class="btn-parkett"><div data-type="3" class="btn-yellowIntense"></div><div class="btn-label">Yellow<br/>Intense</div></div>
@@ -93,6 +93,14 @@
 				
 		    }
 			
+		   $("#All-In-One-Mode").click(function(event){
+			if($(':checked').length > 0)
+			  $('#chkON').html('On'); 
+		    else
+			  $('#chkON').html('Off');
+
+		   })
+			
 	       
 		   $(".btn-parkett div").click(function(event){
 			
@@ -111,7 +119,6 @@
     
                 }); 
 			 }
-	
 		   
 		   });
 		   
