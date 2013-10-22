@@ -93,7 +93,8 @@
 	margin-right:10px;
 	width:50px;
 	height:200px;
-	
+	z-index:100;
+	-webkit-transform:translateZ(0);
 }
 .btn-parkett{
 	float:left;
@@ -102,7 +103,8 @@
 	height:200px;
 	border:0px;
 	color:#fff;
-
+	z-index:100;
+   -webkit-transform:translateZ(0);
 }
 .btn-parkett-active{
 	border:1px solid #fff;
@@ -114,77 +116,110 @@
 	width:80px;
 	height:30px;
 	background:url(../img/white/white-i1.jpg);
-	background-size:cover;
+	-moz-background-size:cover;
+-webkit-background-size: cover; 
+-o-background-size: cover;
+background-size: cover; 
 	background-repeat:no-repeat;
 }
 .btn-yellowLight{
 	width:80px;
 	height:30px;
 	background:url(../img/yellow-light/yellow-light-i1.jpg);
-	background-size:cover;
+	-moz-background-size:cover;
+-webkit-background-size: cover; 
+-o-background-size: cover;
+background-size: cover; 
 	background-repeat:no-repeat;
 }
 .btn-yellowIntense{
 	width:80px;
 	height:30px;
 	background:url(../img/yellow-intense/yellow-intense-i1.jpg);
-	background-size:cover;
+	-moz-background-size:cover;
+-webkit-background-size: cover; 
+-o-background-size: cover;
+background-size: cover; 
 	background-repeat:no-repeat;
 }
 .btn-blueLight{
 	width:80px;
 	height:30px;
 	background:url(../img/blue-light/blue-light-i1.jpg);
-	background-size:cover;
+	-moz-background-size:cover;
+-webkit-background-size: cover; 
+-o-background-size: cover;
+background-size: cover; 
 	background-repeat:no-repeat;
 }
 .btn-blueIntense{
 	width:80px;
 	height:30px;
 	background:url(../img/blue-intense/blue-intense-i1.jpg);
-	background-size:cover;
+	-moz-background-size:cover;
+-webkit-background-size: cover; 
+-o-background-size: cover;
+background-size: cover; 
 	background-repeat:no-repeat;
 }
 .btn-oldNews{
 	width:80px;
 	height:30px;
 	background:url(../img/oldnews/oldnews-i1.jpg);
-	background-size:cover;
+	-moz-background-size:cover;
+-webkit-background-size: cover; 
+-o-background-size: cover;
+background-size: cover; 
 	background-repeat:no-repeat;
 }
 .btn-mandala{
 	width:80px;
 	height:30px;
 	background:url(../img/mandala/mandala-i1.jpg);
-	background-size:cover;
+	-moz-background-size:cover;
+-webkit-background-size: cover; 
+-o-background-size: cover;
+background-size: cover; 
 	background-repeat:no-repeat;
 }
 .btn-redLight{
 	width:80px;
 	height:30px;
 	background:url(../img/red-light/red-light-i1.jpg);
-	background-size:cover;
+	-moz-background-size:cover;
+-webkit-background-size: cover; 
+-o-background-size: cover;
+background-size: cover; 
 	background-repeat:no-repeat;
 }
 .btn-redIntense{
 	width:80px;
 	height:30px;
 	background:url(../img/red-intense/red-intense-i1.jpg);
-	background-size:cover;
+	-moz-background-size:cover;
+-webkit-background-size: cover; 
+-o-background-size: cover;
+background-size: cover; 
 	background-repeat:no-repeat;
 }
 .btn-greenLight{
 	width:80px;
 	height:30px;
 	background:url(../img/green-light/green-light-i1.jpg);
-	background-size:cover;
+	-moz-background-size:cover;
+-webkit-background-size: cover; 
+-o-background-size: cover;
+background-size: cover; 
 	background-repeat:no-repeat;
 }
 .btn-greenIntense{
 	width:80px;
 	height:30px;
 	background:url(../img/green-intense/green-intense-i1.jpg);
-	background-size:cover;
+	-moz-background-size:cover;
+-webkit-background-size: cover; 
+-o-background-size: cover;
+background-size: cover; 
 	background-repeat:no-repeat;
 }
 
@@ -311,6 +346,16 @@ span.tooltip:after {
 	
 }
 
+.footer-big{
+	position:fixed;
+	bottom:0px;
+	height:150px;
+	width:100%;
+	background:rgba(0,0,0,0.8);
+	padding-top:20px;
+	text-align:center;
+	
+}
 .footer{
 	position:fixed;
 	bottom:0px;
@@ -324,6 +369,15 @@ span.tooltip:after {
 	color:#fff;
 	font-size:14px;
 	
+}
+
+#logo-big-front{
+	position:relative;
+	padding-top:30px;
+}
+#logo-big-front img{
+	width:120px;
+	height:auto;
 }
 
 
@@ -344,7 +398,16 @@ span.tooltip:after {
 
 	
 }
-
+.footer-big{
+	position:fixed;
+	bottom:0px;
+	height:150px;
+	width:100%;
+	background:rgba(0,0,0,0.8);
+	padding-top:20px;
+	text-align:center;
+	
+}
 .footer{
 	position:fixed;
 	bottom:0px;
@@ -359,6 +422,47 @@ span.tooltip:after {
 	font-size:12px;
 	
 }
+#logo-big-front{
+	position:relative;
+	padding-top:30px;
+}
+#logo-big-front img{
+	width:120px;
+	height:auto;
+}
+
+span.tooltip {
+      position: absolute;
+	  top: 70px;
+	  left: 20px;
+	  z-index:1000;
+      width: 300px;
+      height: 150px;
+      line-height: 20px;
+      padding: 10px;
+      font-size: 14px;
+      text-align: center;
+      color: rgb(255, 255, 255);
+      background: rgb(0, 0, 0);
+      border: 4px solid rgb(0, 0, 0);
+      border-radius: 5px;
+      text-shadow: rgba(0, 0, 0, 0.0976563) 1px 1px 1px;
+      box-shadow: rgba(0, 0, 0, 0.0976563) 1px 1px 2px 0px;
+	  display:none;
+}
+
+span.tooltip:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-width: 20px;
+      border-style: solid;
+      border-color: #000 transparent transparent transparent;
+      top: 165px;
+      left: 50px;
+}
+
 
 
 }
@@ -367,7 +471,25 @@ span.tooltip:after {
 	
 /***** Phone (landscape 420px) *****/
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+
+.footer-big{
+	position:fixed;
+	bottom:0px;
+	height:150px;
+	width:100%;
+	background:rgba(0,0,0,0.8);
+	padding-top:20px;
+	text-align:center;
 	
+}
+#logo-big-front{
+	position:relative;
+	padding-top:30px;
+}
+#logo-big-front img{
+	width:120px;
+	height:auto;
+}
 
 
 }

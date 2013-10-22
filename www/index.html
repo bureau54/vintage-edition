@@ -32,8 +32,8 @@
         <link rel="stylesheet" type="text/css" href="css/flat-ui.css" />
         <link rel="stylesheet" type="text/css" href="css/layout.css" />
 
-        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery.mobile-1.3.1.min.js"></script>
 		<script type="text/javascript" src="js/modernizr.custom.86080.js"></script>
 
     </head>
@@ -68,12 +68,12 @@
          <div class="grid_12">
            <div class="spacer"></div>
            <p class="btn btn-info btn-large max-img"><a href="parquetdesigner.html#parallel" rel="external">Parallel</a></p>
-           <p class="btn btn-info btn-large max-img"><a href="parquetdesigner.html#offset" rel="external">Parallel versetzt</a></p>
-           <p class="btn btn-info btn-large max-img"><a href="parquetdesigner.html#shipdeck" rel="external">Schiffsboden</a></p>
-           <p class="btn btn-info btn-large max-img"><a href="parquetdesigner.html#english" rel="external">Englisch</a></p>
+           <p class="btn btn-info btn-large max-img"><a href="parquetdesigner.html#offset" rel="external">Offset Parallel</a></p>
+           <p class="btn btn-info btn-large max-img"><a href="parquetdesigner.html#shipdeck" rel="external">Shipdeck</a></p>
+           <p class="btn btn-info btn-large max-img"><a href="parquetdesigner.html#english" rel="external">English</a></p>
            
-           <span class="tooltip"><p>1. Verlegeart wählen</p><p>2. Bodengrundfarbe auswählen</p><p>3. ON/OFF Schalter betätigen und einzelne Riemen einfärben.</p></span>
-           <div id="manual" class="btn btn-inverse btn-large max-img"><p>Bedienungsanleitung</p></div>
+           <span class="tooltip"><p>1. Choose laying system</p><p>2. Choose ground colour</p><p>3. Press ON/OFF button to dye single strips.</p></span>
+           <div id="manual" class="btn btn-inverse btn-large max-img"><p>Instruction manual</p></div>
            <div id="logo-big-front" class="text-center"><img src="img/logo_big.png" alt="Logo Bauwerk Parkett"/></div>
          </div>
        </div>
@@ -81,7 +81,7 @@
 
        
         <div class="footer">
-          <p class="footer-text">Die Vintage Edition eröffnet mit 2047 Kombinationsmöglichkeiten und vier Verlegearten unzählige Gestaltungsmöglichkeiten – kein Boden ist wie der andere. Kreiere deinen eigenen Boden.</p>
+          <p class="footer-text">The Vintage Edition opens up countless arrangement possibilities with its 2047 combination possibilities. No two floors are alike. Create your own floor.</p>
         </div>
         
         <script type="text/javascript" src="phonegap.js"></script>
@@ -90,6 +90,14 @@
             app.initialize();
 			
 			$("#manual").click(function(event){
+			
+			  $(".tooltip").fadeToggle();	
+		   
+		   });
+        </script>
+    </body>
+</html>
+l").click(function(event){
 			
 			  $(".tooltip").fadeToggle();	
 		   
