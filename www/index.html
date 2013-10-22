@@ -38,6 +38,7 @@
 
     </head>
     <body>
+      <div id="vintageSelect" data-role="page" >
         <ul class="cb-slideshow">
             <li><span>Image 01</span></li>
             <li><span>Image 02</span></li>
@@ -83,25 +84,26 @@
         <div class="footer">
           <p class="footer-text">The Vintage Edition opens up countless arrangement possibilities with its 2047 combination possibilities. No two floors are alike. Create your own floor.</p>
         </div>
+      </div>
         
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
 			
-			$("#manual").click(function(event){
+			$('#vintageSelect').bind('pageinit', function(event) {
+	          
+			  $("#manual").click(function(event){
 			
-			  $(".tooltip").fadeToggle();	
+			    $(".tooltip").fadeToggle();	
 		   
-		   });
-        </script>
-    </body>
-</html>
-l").click(function(event){
+		      });
+			  
+            });
 			
-			  $(".tooltip").fadeToggle();	
-		   
-		   });
         </script>
+
+
     </body>
+
 </html>
